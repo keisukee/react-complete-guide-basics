@@ -4,6 +4,11 @@ import Persons from '../components/Persons/Persons.js';
 import Cockpit from '../components/Cockpit/Cockpit.js';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    console.log('[App.js] constructor');
+
+  }
   state = {
     persons: [
       { id: 'nfdoje', name: 'Max', age: 28},
@@ -12,6 +17,11 @@ class App extends Component {
   ],
     showPersons: false
   };
+
+  static getDerivedStateFromProps(props, state) {
+    console.log('[App.js] get derived from state', props);
+
+  }
 
   switchNameHandler = (newName) => {
     this.setState({
