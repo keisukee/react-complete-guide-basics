@@ -1,22 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Persons from '../components/Persons/Persons.js';
-import styled from 'styled-components';
 import Cockpit from '../components/Cockpit/Cockpit.js';
-
-const StyledButton = styled.button`
-  background-color: ${props => props.alt ? 'red' : 'green'};
-  color: white;
-  font: inherit;
-  border: 1px solid blue;
-  padding: 8px;
-  cursor: pointer;
-  &:hover {
-    background-color: ${props => props.alt ? 'salmon' : 'lightgreen'};
-    color: black;
-  }
-`;
-
 
 class App extends Component {
   state = {
@@ -68,21 +53,8 @@ class App extends Component {
   }
 
   render() {
-    // const style = {
-    //   backgroundColor: 'white',
-    //   font: 'inherit',
-    //   border: '1px solid blue',
-    //   padding: '8px',
-    //   cursor: 'pointer',
-    //   ':hover': {
-    //     backgroundColor: 'lightgreen',
-    //     color: 'black'
-    //   }
-    // };
-
     let persons = null;
 
-    // if (true) {
     if (this.state.showPersons) {
       persons = (
         <div>
@@ -92,21 +64,7 @@ class App extends Component {
             changed={this.nameChangedHandler} />
         </div>
       );
-      // style.backgroundColor = 'red';
-      // style[':hover'] = {
-      //   backgroundColor: 'salmon',
-      //   color: 'black'
-      // };
     }
-
-    const classes = [];
-    // if (this.state.persons.length <= 2) {
-    //   classes.push('red');
-    // }
-
-    // if (this.state.persons.length <= 1) {
-    //   classes.push('bold');
-    // }
 
     return (
       <div className="App">
@@ -116,12 +74,6 @@ class App extends Component {
           clicked={this.togglePersonsHandler}
         />
         {persons}
-        {/* <h1>Hi, I'm a React App</h1>
-        <p className={classes.join(' ')}>This is really working!</p>
-        <StyledButton
-          alt={this.state.showPersons}
-          onClick={this.togglePersonsHandler} >switch name</StyledButton>
-          {this.state.showPersons && persons} */}
       </div>
     );
   }
